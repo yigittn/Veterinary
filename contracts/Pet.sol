@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
 
 contract veterinary {
@@ -39,8 +39,9 @@ contract veterinary {
     }
 
 
-    function getRegister(string memory _petspecies) external payable{
+    function register(string memory _petspecies) external payable{
         require(msg.value == fee,"Fee is 1 Ether");
+        
         
         Client memory client;
         client.PetOwner = msg.sender;
@@ -72,10 +73,8 @@ contract veterinary {
         emit Updated(_clientId);
     }
 
-    // Belki updateti geri alma fonksiyonu yapılabilir.
 
-
-    function leaveTheVeterinary(uint256 _clientId) external {
+    function quitFromVeterinary(uint256 _clientId) external {
         require(_clientId < clients.length, "Invalid client id");
         Client storage client = clients[_clientId];
         require(client.PetOwner == msg.sender, "Invalid client id");
@@ -85,7 +84,7 @@ contract veterinary {
     }
 
 
-    function fixThePetSpecies(uint256 _clientId, string memory _petspecies) external {
+    function changeThePetSpecies(uint256 _clientId, string memory _petspecies) external {
         
         require(_clientId < clients.length, "Invalid client id");
         Client storage client = clients[_clientId];
@@ -95,15 +94,6 @@ contract veterinary {
         emit Fixed(msg.sender, _clientId, _petspecies);
 
     }
-
-
-    /* 
-    function readClientSituation(uint256 _clientId)  external view returns(Client memory){
-        require(_clientId < clients.length,"Client not found");
-        Client memory client = clients[_clientId];
-        return client;
-    }
-    */
 
 
     function deleteMember(uint256 _clientId) external onlyOwner{
@@ -121,7 +111,15 @@ contract veterinary {
         emit Withdraw("Owner withdrawed balance");
     }
 
+        /* 
+    function readClientSituation(uint256 _clientId)  external view returns(Client memory){
+        require(_clientId < clients.length,"Client not found");
+        Client memory client = clients[_clientId];
+        return client;
+    }
+    */
 
+    
     modifier onlyOwner() {
         require(msg.sender == owner, "onlyOwner");
         
