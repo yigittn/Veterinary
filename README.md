@@ -16,8 +16,8 @@ ayarlanıcak daha sonrasında ise owner tarafından bu bilgiler güncellenicek.
 
 
 Array tanımladık bu arrayi Struct olan Client türünden tuttuk arrayemize de clients ismini verdik.
-Örnek olsun diye fee değişkeni tanımladık bu zorunlu değildi ama üye olma ücreti 1 ethere sabitledik.
-Contractı deploy eden kişiyi owner olarak atadığımız bir constructor var ve eventler tanımladık her yapılan işlemin sonunda bir event yayınlamak amacıyla.
+Örnek olsun diye fee değişkeni tanımladık üye olma ücreti 1 ethere sabitledik.
+Contractı deploy eden kişiyi owner olarak atadığımız bir constructor bulunmaktadır.
 
 
 ![image](https://user-images.githubusercontent.com/96335654/194390142-be187ed2-51af-412b-8358-8b6fe3e0007b.png)
