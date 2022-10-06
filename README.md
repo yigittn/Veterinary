@@ -59,3 +59,10 @@ bu modifier ise klasik onlyOwner modifieridir fonksiyonları sadece ownerın yap
 
 
 
+
+Kısa bir açıklama gerekirse bu uygulama sayesinde kayıt yapabilir ve bazı bilgileri sözleşmede tutabilirsiniz. Bu sözleşmenin örnekleri çoğaltılabilir. Örneğin
+Kulüp üyelikleri, spor salonu üyelikleri, gibi günlük yaşantımızda kayıt olduğumuz bir çok alana uyarlanabilir bakış açımızı genişletmesi için veterinerlik üzerine
+yazdım. 
+
+
+
